@@ -45,8 +45,8 @@ section {
   content: "&";
   position: absolute;
   bottom: 0;
-  left: 50%;
-  transform: translate( -50%, 50%);
+  right: 50%;
+  transform: translate( 50%, 50%);
   font-family: "Press Start 2P", sans-serif;
   font-size: 4rem;
   z-index: 1;
@@ -158,8 +158,8 @@ footer p {
 
 .movement::after {
   right: 0;
-  top: 50%;
-  /* transform: translate( -50%, -50%); */
+  bottom: 50%;
+  transform: translate( 50%, -50%);
   font-size: 4rem;
  
 }
