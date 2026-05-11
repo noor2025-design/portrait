@@ -99,7 +99,7 @@ article {
 
   position: relative;
 }
-.motion article figure div {
+.figure-background {
   background-image: repeating-linear-gradient(
     to bottom,
     var(--secondary-color),
@@ -113,6 +113,7 @@ article {
   position: relative;
   z-index: 2;
 }
+
 .motion figcaption {
   font-family: "Press Start 2P", sans-serif;
   display: flex;
