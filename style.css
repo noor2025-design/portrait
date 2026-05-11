@@ -22,6 +22,8 @@ main {
 section {
   display: flex;
   flex-direction: column;
+  align-items: center;
+  justify-content: center;
   height: 100vh;
   position: relative;
 }
@@ -44,13 +46,14 @@ section {
     transparent 5px,
     transparent 10px
   );
+
 }
 header {
   position: absolute;
   top: 0;
   height: 100%;
-  width: 20%;
-  padding: 4rem;
+  width: 3rem;
+margin-inline: 2rem;
 }
 .movement header {
   left: 0;
@@ -62,7 +65,7 @@ header {
 
 h1 {
   font-family: "Press Start 2P";
-  font-size: 5rem;
+  font-size: 3rem;
   position: absolute;
   left: 50%;
   top: 50%;
@@ -72,7 +75,40 @@ h1 {
 article {
   display: flex;
   flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
   flex: 1;
+  padding: 5rem;
+  width: 100%;
+}
+.motion article figure{
+  width: calc(100% - 3rem);
+  height: calc(33% - 3rem);
+    background-image: repeating-linear-gradient(
+    to bottom,
+    var(--secondary-color),
+    var(--secondary-color) 5px,
+   var(--tertiary-color) 5px,
+    var(--tertiary-color) 10px
+  );
+  border-bottom: .5rem var(--tertiary-color) solid;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  z-index: 2;
+}
+.motion figcaption{
+  font-family: "Press Start 2P", sans-serif;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  gap: 1rem;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1;
 }
 
 footer {
@@ -92,15 +128,32 @@ footer p {
 
 .motion footer p {
   background-color: var(--tertiary-color);
+  
 }
 
 /* Media Query for small laptops */
 /* I pulled these key breakpoints from https://dev.to/gerryleonugroho/responsive-design-breakpoints-2025-playbook-53ih */
-/* @media (width >= 1025px) {
- {
-    
-  }
-} */
+@media (width >= 1025px) {
+ 
+h1 {
+  font-size: 5rem;
+}
+header {
+margin-inline: 2rem;
+ width: 5rem;
+}
+article {
+  padding: 7rem;
+  
+}
+.motion article figure{
+  width: calc(100% - 4rem);
+}
+.motion figcaption{
+  flex-direction: row;
+  
+}
+}
 /* Media Query for large desktops */
 /* @media (width >= 1200px) {
    h1 {
