@@ -1,0 +1,41 @@
+/* :root{
+      --color-secondary-background: ;
+  --primary-font-color: ;
+  --body-copy: 1rem;
+  --font-primary: ;
+  --font-secondary: ;
+} */
+
+html{
+
+}
+
+body{
+
+}
+
+footer{
+
+}
+
+
+
+
+
+
+
+
+/* Media Query for small laptops */
+/* I pulled these key breakpoints from https://dev.to/gerryleonugroho/responsive-design-breakpoints-2025-playbook-53ih */
+/* @media (width >= 1025px) {
+ {
+    
+  }
+} */
+/* Media Query for large desktops */
+/* @media (width >= 1200px) {
+   h1 {
+  
+  }
+  
+} */
