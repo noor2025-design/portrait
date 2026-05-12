@@ -1,8 +1,8 @@
-let figureElements = document.querySelectorAll(".motion figure");
-let figureBackgrounds = document.querySelectorAll(".figure-background");
+let motionFigureElements = document.querySelectorAll(".motion figure");
 
-figureElements.forEach((element) => {
-  element.addEventListener("click", (event) => {
+motionFigureElements.forEach((element) => {
+    element.addEventListener("click", (event) => {
+     let figureBackgrounds = document.querySelectorAll(".figure-background");
     let figureElement = event.currentTarget;
     let figureBackground = figureElement.querySelector(".figure-background");
     let isActive = figureBackground.classList.contains("animate")
@@ -12,3 +12,5 @@ figureElements.forEach((element) => {
     }
   });
 });
+
+movementFigureElements = document.querySelectorAll(".movement figure")
