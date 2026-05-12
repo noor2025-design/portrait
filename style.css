@@ -112,8 +112,13 @@ article {
   width: 100%;
   position: relative;
   z-index: 2;
+   transform: rotate(0deg) translateY(0rem);
+   transform-origin: left bottom;
+   transition: transform .5s ease-in-out;
 }
-
+.figure-background.animate{
+  transform: rotate(-30deg) translateY(-3rem);
+}
 .motion figcaption {
   font-family: "Press Start 2P", sans-serif;
   display: flex;
