@@ -103,8 +103,8 @@ article {
 .movement figure {
   height: 100%;
   width: 80%;
-  /* this calculation is the aspect ration for the max-width that it should be based on the height of th entire viewport minus the footer 20rem and minus the gap using grid.  */
-  max-width: calc((4 * (100vh - 20rem) - 1rem) / 5);
+  /* this calculation is the aspect ratio for the max-width that should be based on the height of the entire viewport(100vh) minus the footer (13.5rem), minus the article padding (8rem) which equals 21.5rem, and minus the gap (1rem).  */
+  max-width: calc((4 * (100vh - 21.5rem) - 1rem) / 5);
   /* display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -197,7 +197,7 @@ article {
   transition: transform 0.5s ease-in-out;
 }
 .figure-background.animate {
-  transform: rotate(-30deg) translateY(-3rem);
+  transform: rotate(-45deg) translateY(-3rem);
 }
 .motion figcaption {
   font-family: "Press Start 2P", sans-serif;
@@ -217,12 +217,24 @@ footer {
   display: flex;
   justify-content: center;
   padding: 2rem 2rem 4rem;
+  width: 100%;
 }
 
 footer p {
-  width: 70%;
-  padding: 2rem;
+ min-width: 70%;
+  padding: 1.5rem;
   font-family: "Poppins", sans-serif;
+  flex-direction: column;
+  display: flex;
+  flex-wrap: wrap;
+  text-align: center;
+}
+
+.motion footer a:hover{
+  color: var(--primary-color);
+}
+.movement a:hover{
+  color: var(--secondary-color);
 }
 .movement footer p {
   background-color: var(--quaternary-color);
@@ -239,7 +251,7 @@ footer p {
   .movement figure {
     grid-template-columns: repeat(4, 1fr);
   }
-  /* n starts a 0 and this would target the spans 11-20 */
+  /* n starts a 0 which is the first element and goes through each element to grab half of the elements and this would target the spans 11-20 */
   .movement figure span:nth-child(n + 11) {
     display: inline-block;
   }
