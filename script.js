@@ -13,4 +13,32 @@ motionFigureElements.forEach((element) => {
   });
 });
 
-movementFigureElements = document.querySelectorAll(".movement figure")
+movementSpanElements = document.querySelectorAll(".movement figure span")
+
+movementSpanElements.forEach((span, index)=>{
+  span.addEventListener("click",(event)=>{
+    let target = event.currentTarget
+
+    let isSquare = target.classList.contains("square")
+    
+  if (isSquare) {
+     target.classList.remove("slide-right")
+    target.classList.add("slide-right")
+    movementSpanElements.forEach((element, i)=>{
+      if (i === index + 1) {
+            element.classList.remove("slide-left")
+          element.classList.add("slide-left")
+      }
+    })
+  } else {
+    target.classList.remove("slide-left")
+    target.classList.add("slide-left")
+    movementSpanElements.forEach((element, i)=>{
+      if (i === index - 1) {
+        element.classList.remove("slide-right")
+          element.classList.add("slide-right")
+      }
+    })
+  }
+  })
+})

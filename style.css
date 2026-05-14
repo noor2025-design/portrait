@@ -103,17 +103,22 @@ article {
 .movement figure {
   height: 100%;
   width: 80%;
+  /* this calculation is the aspect ration for the max-width that it should be based on the height of th entire viewport minus the footer 20rem and minus the gap using grid.  */
+  max-width: calc((4 * (100vh - 20rem) - 1rem) / 5);
   /* display: flex;
   flex-direction: column;
   justify-content: space-between;
   gap: 1rem; */
   display: grid;
-  grid-template-columns: repeat(4,1fr);
+  grid-template-columns: repeat(2, 1fr);
+
   /* grid-template-rows: repeat(5, 1fr); */
   gap: 1rem;
-  align-content: start;
+  align-content: space-between;
 }
-
+.movement figure span:nth-child(n + 11) {
+  display: none;
+}
 /* .row {
   width: 100%;
   height: 20%;
@@ -126,10 +131,10 @@ article {
   width: calc(100% - 3rem / 4);
   aspect-ratio: 1 / 1;
 } */
- .movement figure span{
+.movement figure span {
   width: 100%;
   aspect-ratio: 1 / 1;
- }
+}
 .square {
   background-color: var(--quaternary-color);
 }
@@ -137,6 +142,37 @@ article {
 .circle {
   background-color: var(--secondary-color);
   border-radius: 50%;
+}
+
+@keyframes move-left {
+  from {
+    transform: translateX(0);
+    background-color: var(--secondary-color);
+    border-radius: 50%;
+  }
+  to {
+    transform: translateX(calc(-100% - 1rem));
+    background-color: var(--quaternary-color);
+    border-radius: 0;
+  }
+}
+@keyframes move-right {
+  from {
+    transform: translateX(0);
+    background-color: var(--quaternary-color);
+    border-radius: 0;
+  }
+  to {
+    transform: translateX(calc(100% + 1rem));
+    background-color: var(--secondary-color);
+    border-radius: 50%;
+  }
+}
+.slide-left {
+  animation: move-left 0.5s ease-in-out;
+}
+.slide-right {
+  animation: move-right 0.5s ease-in-out;
 }
 .motion article figure {
   width: calc(100% - 3rem);
@@ -198,6 +234,17 @@ footer p {
 
 /* Media Query for small laptops */
 /* I pulled these key breakpoints from https://dev.to/gerryleonugroho/responsive-design-breakpoints-2025-playbook-53ih */
+/* Media Query for mobile devices */
+@media (width >= 480px) {
+  .movement figure {
+    grid-template-columns: repeat(4, 1fr);
+  }
+  /* n starts a 0 and this would target the spans 11-20 */
+  .movement figure span:nth-child(n + 11) {
+    display: inline-block;
+  }
+}
+
 @media (width >= 1025px) {
   main {
     flex-direction: row;
