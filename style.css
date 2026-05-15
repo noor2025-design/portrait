@@ -24,6 +24,7 @@ section {
   width: 100%;
 }
 
+/* I used repeating-linear gradient to create a vertical stripe pattern as the background for the movement section to reflect the designers artwork style. It repeats a 5px stripe in the primary color with a transparent gap going from left to right across the section. I used MDN for repeating-linear gradient to understand the syntax for controlling stripe width and repeated lines. Source: https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Values/gradient/repeating-linear-gradient  */
 .movement {
   background-image: repeating-linear-gradient(
     to right,
@@ -44,6 +45,7 @@ section {
   font-size: 4rem;
   z-index: 1;
 }
+/* /* I used repeating-linear gradient to create a vertical stripe pattern as the background for the motion section to reflect the designers artwork style. It repeats a 5px stripe in the secondary color with a transparent gap going from left to right across the section. I used MDN for repeating-linear gradient to understand the syntax for controlling stripe width and repeated lines. Source: https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Values/gradient/repeating-linear-gradient  */
 .motion {
   background-image: repeating-linear-gradient(
     to right,
@@ -96,13 +98,15 @@ article {
 .movement figure {
   height: 100%;
   width: 80%;
-  /* this calculation is the aspect ratio for the max-width that should be based on the height of the entire viewport(100vh) minus the footer (17rem) and minus the article padding (8rem) which equals 25rem total, and minus the gap (1rem) divided by the 5 columns.  */
+  /* this calculation is the aspect ratio for the max-width that should be based on the height of the entire viewport(100vh) minus the footer (17rem) and minus the article padding (8rem) which equals 25rem total. I had initially had the offset wrong and a tutor explained that available height needed to be multiplied by 2 for the aspect ratio. Width is 2x the available height, minus the gap (1rem) divided by the 5 columns.  */
   max-width: calc((2 * (100vh - 25rem) - 1rem) / 5);
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 1rem;
   align-content: space-between;
 }
+
+/* n starts at 0, so n+11 targets every span from the 11th element onward (spans 11-20). I tried :nth-child(11) which only grabbed the single 11th element but I learned from a tutor that (n+11) is the correct way to select this range starting from a specific child. */
 .movement figure span:nth-child(n + 11) {
   display: none;
 }
@@ -155,6 +159,8 @@ article {
   height: calc(33% - 1rem);
   position: relative;
 }
+
+/* /* I used repeating-linear gradient again here to create a striped pattern on the figure background. It repeats a 5px stripe in the secondary color and the 5px tertiary color going from top to bottom. I used MDN for repeating-linear gradient to understand the syntax for controlling stripe width and repeated lines. Source: https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Values/gradient/repeating-linear-gradient  */
 .figure-background {
   background-image: repeating-linear-gradient(
     to bottom,
@@ -232,7 +238,7 @@ footer p {
   .movement figure {
     grid-template-columns: repeat(4, 1fr);
   }
-  /* n starts a 0 which is the first element and goes through each element to grab half of the elements and this would target the spans 11-20 */
+
   .movement figure span:nth-child(n + 11) {
     display: inline-block;
   }
