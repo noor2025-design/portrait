@@ -1,0 +1,12 @@
+<svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+<rect width="16" height="16" fill="#59FFA0"/>
+<line x1="1.5" y1="2.1857e-08" x2="1.5" y2="16" stroke="#F2FF49"/>
+<line x1="3.5" y1="2.1857e-08" x2="3.5" y2="16" stroke="#F2FF49"/>
+<line x1="5.5" y1="2.1857e-08" x2="5.5" y2="16" stroke="#F2FF49"/>
+<line x1="7.5" y1="2.1857e-08" x2="7.5" y2="16" stroke="#F2FF49"/>
+<line x1="9.5" y1="2.1857e-08" x2="9.5" y2="16" stroke="#F2FF49"/>
+<line x1="11.5" y1="2.1857e-08" x2="11.5" y2="16" stroke="#F2FF49"/>
+<line x1="13.5" y1="2.1857e-08" x2="13.5" y2="16" stroke="#F2FF49"/>
+<line x1="15.5" y1="2.1857e-08" x2="15.5" y2="16" stroke="#F2FF49"/>
+<path d="M4 12.75V4H6.5V5.25H7.75V6.5H9V5.25H10.25V4H12.75V12.75H10.25V7.75H9V10.25H7.75V7.75H6.5V12.75H4Z" fill="black"/>
+</svg>
