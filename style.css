@@ -243,7 +243,7 @@ footer p {
   }
   .motion article figure {
   width: calc(100% - 3rem);
-  height: calc(33% - 3rem);
+  height: calc(33% - 1rem);
   position: relative;
 }
 .motion figcaption{
