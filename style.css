@@ -3,15 +3,8 @@
   --secondary-color: #59ffa0;
   --tertiary-color: #fb62f6;
   --quaternary-color: #f2ff49;
-  /* --body-copy: 1rem; */
-  /* --font-primary: ;
-  --font-secondary: ; */
-}
-
-html {
-}
-
-body {
+  --primary-font: "Press Start 2P", sans-serif;
+  --secondary-font: "Poppins", sans-serif;
 }
 
 main {
@@ -47,7 +40,7 @@ section {
   bottom: 0;
   right: 50%;
   transform: translate(50%, 50%);
-  font-family: "Press Start 2P", sans-serif;
+  font-family: var(--primary-font);
   font-size: 4rem;
   z-index: 1;
 }
@@ -76,7 +69,7 @@ header {
 }
 
 h1 {
-  font-family: "Press Start 2P";
+  font-family: var(--primary-font);
   font-size: 2.5rem;
   position: absolute;
   left: 50%;
@@ -103,34 +96,17 @@ article {
 .movement figure {
   height: 100%;
   width: 80%;
-  /* this calculation is the aspect ratio for the max-width that should be based on the height of the entire viewport(100vh) minus the footer (17rem), minus the article padding (8rem) which equals 26rem, and minus the gap (1rem).  */
+  /* this calculation is the aspect ratio for the max-width that should be based on the height of the entire viewport(100vh) minus the footer (17rem) and minus the article padding (8rem) which equals 25rem total, and minus the gap (1rem) divided by the 5 columns.  */
   max-width: calc((2 * (100vh - 25rem) - 1rem) / 5);
-  /* display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  gap: 1rem; */
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-
-  /* grid-template-rows: repeat(5, 1fr); */
   gap: 1rem;
   align-content: space-between;
 }
 .movement figure span:nth-child(n + 11) {
   display: none;
 }
-/* .row {
-  width: 100%;
-  height: 20%;
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-}
-.row span {
-  display: inline-block;
-  width: calc(100% - 3rem / 4);
-  aspect-ratio: 1 / 1;
-} */
+
 .movement figure span {
   width: 100%;
   aspect-ratio: 1 / 1;
@@ -200,7 +176,7 @@ article {
   transform: rotate(-45deg) translateY(-3rem);
 }
 .motion figcaption {
-  font-family: "Press Start 2P", sans-serif;
+  font-family: var(--primary-font);
   display: flex;
   flex-direction: column;
   text-align: center;
@@ -224,7 +200,7 @@ footer {
 footer p {
  min-width: 70%;
   padding: 1.5rem;
-  font-family: "Poppins", sans-serif;
+  font-family: var(--secondary-font);
   flex-direction: column;
   display: flex;
   flex-wrap: wrap;
@@ -245,7 +221,7 @@ footer p {
   background-color: var(--tertiary-color);
 }
 
-/* Media Query for small laptops */
+
 /* I pulled these key breakpoints from https://dev.to/gerryleonugroho/responsive-design-breakpoints-2025-playbook-53ih */
 /* Media Query for mobile devices */
 @media (width >= 480px) {
@@ -267,14 +243,14 @@ footer p {
   }
   .motion article figure {
   width: calc(100% - 3rem);
-  height: calc(33% - 1rem);
+  height: calc(33% - 3rem);
   position: relative;
 }
 .motion figcaption{
   font-size: 1rem;
 }
 }
-
+/* Media Query for small laptops */
 @media (width >= 1025px) {
   main {
     flex-direction: row;
@@ -290,7 +266,7 @@ footer p {
     font-size: 4rem;
   }
 }
-/* Media Query for large desktops */
+/* Media Query for large laptops/desktops */
 @media (width >= 1200px) {
   h1 {
     font-size: 5rem;
@@ -299,9 +275,7 @@ footer p {
     margin-inline: 2rem;
     width: 5rem;
   }
-  /* article {
-    padding: 7rem;
-  } */
+
   .movement article {
     padding: 5rem 5rem 3rem 7rem;
   }
@@ -312,7 +286,4 @@ footer p {
   .motion article figure {
     width: calc(100% - 4rem);
   }
-  /* .motion figcaption{
-  flex-direction: row;
-} */
 }
